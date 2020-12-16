@@ -5,8 +5,6 @@ import Dashboard from './components/layout/Dashboard'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Pokemon from './components/Pokemon/Pokemon'
-import SearchBar from './components/Search/SearchBar'
-import PokeList from './components/Testing/PokeList';
 
 
 function App() {
@@ -20,7 +18,6 @@ function App() {
             <Switch>
               <Route exact path="/" component={Dashboard} />
               <Route exact path="/pokemon/:pokemonID" component={Pokemon} />
-              {/* <Route exact path="/" component={PokeList} /> */}
             </Switch>
           </div>
         </>
