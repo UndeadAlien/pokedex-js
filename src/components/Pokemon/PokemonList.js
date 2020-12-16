@@ -1,42 +1,63 @@
-import React, { Component, useState } from 'react';
-import PokemonCard from './PokemonCard';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Cards from './Cards';
+import { ButtonContainer, LoadMoreButton, ShowLessButton } from './PokemonElements';
 
 
 
 
-export default class PokemonList extends Component {
+function PokemonList() {
 
-    state = {
-        url: "https://pokeapi.co/api/v2/pokemon/?limit=100",
-        pokemon: null,
-    };
+    const [loading, setLoading] = useState(false);
+    const [posts, setPosts] = useState([]);
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage, setPostsPerPage] = useState(10);
 
+    useEffect(() => {
+        const fetchPosts = async () => {
+            setLoading(true);
+            const res = await axios.get('https://pokeapi.co/api/v2/pokemon/?limit=2000');
+            setPosts(res.data['results']);
+            setLoading(false);
+        }
+        
+        fetchPosts();
+    }, []);
 
-    async componentDidMount() {
-        const res = await axios.get(this.state.url);
-        this.setState({ pokemon: res.data['results'] })
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+    const loadMore = () => {
+        setPostsPerPage(postsPerPage + 10);
+    }
+    
+    const showLess = () => {
+        setPostsPerPage(postsPerPage - 10);
     }
 
-    render() {
-        return (
-            <>
-                {this.state.pokemon ? (
-                    <div className="row">
-                        {this.state.pokemon.map((pokemon) => (
-                            <PokemonCard
-                                key={pokemon.name}
-                                name={pokemon.name}
-                                image={pokemon.image}
-                                url={pokemon.url}
-                            />
-                        ))}
-                    </div>
-                ) : (
-                        <h1>Loading...</h1>
-                    )}
-            </>
-        )
-    }
+    return (
+        <>
+            <div className="container">
+                <Cards posts={currentPosts} loading={loading} />
+
+                <ButtonContainer className="button__container">
+
+                    {postsPerPage <= indexOfLastPost &&
+                        <LoadMoreButton className="loadMoreButtton" onClick={loadMore}>Load more</LoadMoreButton>
+                    }
+
+                    {postsPerPage > 10 &&
+                        <ShowLessButton className="showLessButton" onClick={showLess}>Show less</ShowLessButton>
+                    }
+
+                </ButtonContainer>
+
+            </div>
+        </>
+    )
 }
+
+
+export default PokemonList;

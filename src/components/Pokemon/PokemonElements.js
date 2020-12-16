@@ -35,3 +35,33 @@ export const StyledLink = styled(Link)`
     }
 
 `;
+
+export const ButtonContainer = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, 25%);
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 3em;
+`;
+
+export const LoadMoreButton = styled.button`
+    background-color: #ef5350;
+    color: white;
+    font-weight: bold;
+
+    &:hover {
+        background: transparent;
+        color: black;
+    }
+`;
+
+export const ShowLessButton = styled.button`
+    background-color: #fff;
+    color: black;
+    font-weight: bold;
+
+    &:hover {
+        background: #ef5350;
+        color: white;
+    }
+`;
