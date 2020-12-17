@@ -4,8 +4,6 @@ import Cards from './Cards';
 import { ButtonContainer, LoadMoreButton, ShowLessButton } from './PokemonElements';
 
 
-
-
 function PokemonList() {
 
     const [loading, setLoading] = useState(false);
@@ -13,6 +11,11 @@ function PokemonList() {
 
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(10);
+
+    const [index, setIndex] = useState(null);
+    const [value, setValue] = useState([]);
+    const [lines, setLines] = useState([]);
+    const [results, setResults] = useState([]);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -40,7 +43,10 @@ function PokemonList() {
     return (
         <>
             <div className="container">
-                <Cards posts={currentPosts} loading={loading} />
+                {index == null &&
+                    <Cards posts={currentPosts} loading={loading} />
+                }
+                
 
                 <ButtonContainer className="button__container">
 
