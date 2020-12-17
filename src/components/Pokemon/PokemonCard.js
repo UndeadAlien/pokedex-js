@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Sprite, Card, StyledLink } from './PokemonElements';
-import spinner from './spinner.gif';
+import spinner from './poke_load.gif';
 
 export default class PokemonCard extends Component {
 
@@ -62,7 +62,10 @@ export default class PokemonCard extends Component {
                                     .map(letter => letter.charAt(0).toUpperCase() + letter.substring(1))
                                     .join(' ')}
                             </h6>
+
+                            
                         </div>
+                        
                     </Card>
                 </StyledLink>
             </div>

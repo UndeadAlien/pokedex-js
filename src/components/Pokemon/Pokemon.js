@@ -172,7 +172,7 @@ export default class Pokemon extends Component {
                     <div className="card-header">
                         <div className="row">
                             <div className="col-5">
-                                <h5>{this.state.pokemonID}</h5>
+                                <h5>PokeID: {this.state.pokemonID}</h5>
                             </div>
                             <div className="col-7">
                                 <div className="float-end">

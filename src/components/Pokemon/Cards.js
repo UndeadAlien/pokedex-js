@@ -21,7 +21,7 @@ const Cards = ({ posts }) => {
 
         <ul>
 
-            <div className="input-group mb-3 mt-3">
+            <div className="input-group mb-3">
                 <span className="input-group-text" id ="inputGroup-sizing-sm">Pokemon</span>
                 <input 
                     type="text"
