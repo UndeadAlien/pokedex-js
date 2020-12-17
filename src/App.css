@@ -1,14 +1,16 @@
-  
 .App {
-    background-color: #fafafa;
-    padding-top: 4rem;
-    min-height: 100vh;
-  }
-  
-  .navbar {
-    background-color: #ef5350 !important;
-  }
-  
-  body {
-    background-color: transparent !important;
-  }
+  background-color: #fafafa;
+  padding-top: 4rem;
+  min-height: 150vh;
+
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #ef5350 !important;
+}
+
+body {
+  background-color: transparent !important;
+}

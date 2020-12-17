@@ -12,11 +12,6 @@ function PokemonList() {
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(10);
 
-    const [index, setIndex] = useState(null);
-    const [value, setValue] = useState([]);
-    const [lines, setLines] = useState([]);
-    const [results, setResults] = useState([]);
-
     useEffect(() => {
         const fetchPosts = async () => {
             setLoading(true);
@@ -40,13 +35,15 @@ function PokemonList() {
         setPostsPerPage(postsPerPage - 10);
     }
 
+    
+
     return (
         <>
             <div className="container">
-                {index == null &&
-                    <Cards posts={currentPosts} loading={loading} />
-                }
-                
+
+                <Cards posts={currentPosts} loading={loading} />
+
+                {/* Loading Buttons */}
 
                 <ButtonContainer className="button__container">
 
@@ -59,7 +56,7 @@ function PokemonList() {
                     }
 
                 </ButtonContainer>
-
+                
             </div>
         </>
     )
