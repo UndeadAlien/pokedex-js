@@ -1,4 +1,4 @@
-<h3 align="center">pokedex-js</h3>
+<h1 align="center">pokedex-js</h1>
 
 <div align="center">
 
@@ -21,7 +21,7 @@ Display all pokemon in a clean and organized format. Stats displayed in a unique
 
 ### Demo <a name = "demo"></a>
 
-If you would like to try out the <a href="https://pokedex-d114b.web.app/">site</a>.
+If you would like to try out the <a href="https://pokedex-d114b.web.app/" target="_blank">site</a>.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
