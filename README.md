@@ -13,7 +13,6 @@
 
 - [About](#about)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
 - [Authors](#authors)
 
 ## 🧐 About <a name = "about"></a>
@@ -25,7 +24,7 @@ Display all pokemon in a clean and organized format. Stats displayed in a unique
 If you would like to try out the site.
 
 ```
-LINK TO firebase
+https://pokedex-d114b.web.app/
 ```
 
 ## ⛏️ Built Using <a name = "built_using"></a>
