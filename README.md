@@ -21,11 +21,7 @@ Display all pokemon in a clean and organized format. Stats displayed in a unique
 
 ### Demo <a name = "demo"></a>
 
-If you would like to try out the site.
-
-```
-https://pokedex-d114b.web.app/
-```
+If you would like to try out the <a href="https://pokedex-d114b.web.app/">site</a>.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
